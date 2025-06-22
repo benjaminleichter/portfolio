@@ -1,4 +1,5 @@
 import { MusicProject } from '@/types/projects';
+import Link from 'next/link';
 
 interface MusicCardProps {
   project: MusicProject;
@@ -6,9 +7,12 @@ interface MusicCardProps {
 
 const MusicCard = ({ project }: MusicCardProps) => {
   return (
-    <div className={`bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 hover:shadow-lg transition-shadow ${
-      project.featured ? 'ring-2 ring-purple-200 bg-gradient-to-br from-purple-100 to-pink-100' : ''
-    }`}>
+    <Link 
+      href={`/music/${project.id}`}
+      className={`block bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
+        project.featured ? 'ring-2 ring-purple-200 bg-gradient-to-br from-purple-100 to-pink-100' : ''
+      }`}
+    >
       {project.featured && (
         <div className="flex items-center mb-2">
           <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">
@@ -48,41 +52,26 @@ const MusicCard = ({ project }: MusicCardProps) => {
 
       <div className="flex space-x-4 mb-3">
         {project.audioUrl && (
-          <a
-            href={project.audioUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 font-medium text-sm"
-          >
+          <span className="text-purple-600 font-medium text-sm">
             Listen →
-          </a>
+          </span>
         )}
         {project.spotifyUrl && (
-          <a
-            href={project.spotifyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-green-600 hover:text-green-800 font-medium text-sm"
-          >
+          <span className="text-green-600 font-medium text-sm">
             Spotify →
-          </a>
+          </span>
         )}
         {project.youtubeUrl && (
-          <a
-            href={project.youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-red-600 hover:text-red-800 font-medium text-sm"
-          >
+          <span className="text-red-600 font-medium text-sm">
             YouTube →
-          </a>
+          </span>
         )}
       </div>
 
       <div className="text-xs text-gray-500">
         Released {project.releaseDate}
       </div>
-    </div>
+    </Link>
   );
 };
 
