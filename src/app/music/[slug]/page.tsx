@@ -5,14 +5,15 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function MusicProjectDetail({ params }: Props) {
+export default async function MusicProjectDetail({ params }: Props) {
+  const { slug } = await params;
   const projects = getMusicProjects();
-  const project = projects.find((p: MusicProject) => p.id === params.slug);
+  const project = projects.find((p: MusicProject) => p.id === slug);
 
   if (!project) {
     notFound();

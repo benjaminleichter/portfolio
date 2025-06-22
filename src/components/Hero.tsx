@@ -16,7 +16,7 @@ const Hero = () => {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">About Me</h3>
             <p className="text-gray-700 leading-relaxed">
-              I'm a passionate software engineer and music producer who brings creativity 
+              I&apos;m a passionate software engineer and music producer who brings creativity 
               and technical expertise to every project. With a background in professional 
               software development and a deep love for music production, I bridge the gap 
               between technology and artistry.

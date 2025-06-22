@@ -6,7 +6,7 @@ const ContactSection = () => {
           Get In Touch
         </h2>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Let's connect and discuss opportunities in software engineering or music production.
+          Let&apos;s connect and discuss opportunities in software engineering or music production.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
