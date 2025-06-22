@@ -7,10 +7,10 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#engineering', label: 'Engineering' },
-    { href: '#music', label: 'Music' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/engineering', label: 'Engineering' },
+    { href: '/music', label: 'Music' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -18,7 +18,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="#home" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-gray-900">
               Ben Leichter
             </Link>
           </div>
