@@ -1,0 +1,51 @@
+[
+  {
+    "id": "track-1",
+    "title": "Midnight Reflections",
+    "description": "An ambient electronic piece exploring themes of solitude and introspection. Created during my final semester using Ableton Live and various synthesizers.",
+    "genre": "Ambient Electronic",
+    "tools": ["Ableton Live", "Serum", "FabFilter Pro-Q", "Valhalla VintageVerb"],
+    "audioUrl": "https://soundcloud.com/username/midnight-reflections",
+    "spotifyUrl": "https://open.spotify.com/track/example",
+    "featured": true,
+    "releaseDate": "2023-05",
+    "duration": "4:32",
+    "projectType": "Student Project"
+  },
+  {
+    "id": "track-2",
+    "title": "Urban Pulse",
+    "description": "A hip-hop beat with jazz influences, featuring live saxophone recordings. Collaborated with local musicians for this hobbyist project.",
+    "genre": "Hip-Hop/Jazz Fusion",
+    "tools": ["Logic Pro", "Native Instruments Kontakt", "Waves SSL"],
+    "audioUrl": "https://soundcloud.com/username/urban-pulse",
+    "featured": false,
+    "releaseDate": "2023-02",
+    "duration": "3:18",
+    "projectType": "Collaboration"
+  },
+  {
+    "id": "track-3",
+    "title": "Digital Dreams",
+    "description": "Experimental IDM track created entirely with software synthesizers. Explores complex polyrhythms and evolving textures.",
+    "genre": "IDM/Experimental",
+    "tools": ["Reason", "Max/MSP", "izotope Ozone"],
+    "audioUrl": "https://soundcloud.com/username/digital-dreams",
+    "featured": true,
+    "releaseDate": "2022-11",
+    "duration": "5:47",
+    "projectType": "Personal"
+  },
+  {
+    "id": "track-4",
+    "title": "Acoustic Sessions Vol. 1",
+    "description": "A collection of acoustic guitar recordings with subtle electronic processing. Recorded in my home studio during quarantine.",
+    "genre": "Acoustic/Electronic",
+    "tools": ["Pro Tools", "Neumann U87", "Strymon BigSky", "Chase Bliss Blooper"],
+    "audioUrl": "https://soundcloud.com/username/acoustic-sessions",
+    "featured": false,
+    "releaseDate": "2022-06",
+    "duration": "6:23",
+    "projectType": "Personal"
+  }
+]

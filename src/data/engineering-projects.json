@@ -1,0 +1,34 @@
+[
+  {
+    "id": "project-1",
+    "title": "E-Commerce Platform",
+    "description": "Built a scalable e-commerce platform handling 10k+ daily users. Implemented microservices architecture with real-time inventory management and payment processing.",
+    "technologies": ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/username/ecommerce",
+    "featured": true,
+    "startDate": "2023-01",
+    "endDate": "2023-06"
+  },
+  {
+    "id": "project-2", 
+    "title": "Data Analytics Dashboard",
+    "description": "Created a real-time analytics dashboard for business intelligence. Features interactive charts, data filtering, and automated report generation.",
+    "technologies": ["Vue.js", "Python", "FastAPI", "MongoDB", "D3.js"],
+    "liveUrl": "https://dashboard-demo.com",
+    "githubUrl": "https://github.com/username/analytics",
+    "featured": false,
+    "startDate": "2022-08",
+    "endDate": "2022-12"
+  },
+  {
+    "id": "project-3",
+    "title": "Mobile App Backend",
+    "description": "Developed REST API backend for iOS/Android app with 50k+ users. Implemented authentication, push notifications, and data synchronization.",
+    "technologies": ["Express.js", "MySQL", "Redis", "JWT", "Firebase"],
+    "githubUrl": "https://github.com/username/mobile-backend",
+    "featured": false,
+    "startDate": "2022-03", 
+    "endDate": "2022-07"
+  }
+]
