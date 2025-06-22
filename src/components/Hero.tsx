@@ -9,7 +9,7 @@ const Hero = () => {
           Software Engineer & Music Producer
         </h2>
         <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-          Crafting digital experiences through code and sound
+          Crafting digital experiences through code and sound 🚀
         </p>
         
         <div className="max-w-3xl mx-auto">
