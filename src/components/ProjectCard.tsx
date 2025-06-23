@@ -1,64 +1,33 @@
 import { EngineeringProject } from '@/types/projects';
-import Link from 'next/link';
+import BaseCard from './BaseCard';
 
 interface ProjectCardProps {
   project: EngineeringProject;
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const links = [];
+  if (project.liveUrl) {
+    links.push({ label: 'View Live', primary: true });
+  }
+  if (project.githubUrl) {
+    links.push({ label: 'GitHub' });
+  }
+
+  const dateInfo = project.endDate 
+    ? `${project.startDate} - ${project.endDate}`
+    : project.startDate;
+
   return (
-    <Link 
+    <BaseCard
       href={`/engineering/${project.id}`}
-      className={`block bg-off-white border-2 border-black rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
-        project.featured ? 'border-4 border-black' : ''
-      }`}
-    >
-      {project.featured && (
-        <div className="flex items-center mb-2">
-          <span className="bg-off-white border border-black text-black text-xs font-semibold px-2 py-1 rounded-full">
-            Featured
-          </span>
-        </div>
-      )}
-      
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">
-        {project.title}
-      </h3>
-      
-      <p className="text-gray-700 mb-4 leading-relaxed">
-        {project.description}
-      </p>
-      
-      <div className="mb-4">
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-off-white border border-black text-black text-sm rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex space-x-4 mb-3">
-        {project.liveUrl && (
-          <span className="text-black font-medium text-sm">
-            View Live →
-          </span>
-        )}
-        {project.githubUrl && (
-          <span className="text-gray-600 font-medium text-sm">
-            GitHub →
-          </span>
-        )}
-      </div>
-
-      <div className="text-xs text-gray-500">
-        {project.startDate} {project.endDate && `- ${project.endDate}`}
-      </div>
-    </Link>
+      featured={project.featured}
+      title={project.title}
+      description={project.description}
+      tags={project.technologies}
+      links={links}
+      dateInfo={dateInfo}
+    />
   );
 };
 
