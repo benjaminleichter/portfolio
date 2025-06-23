@@ -9,13 +9,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <Link 
       href={`/engineering/${project.id}`}
-      className={`block bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
-        project.featured ? 'ring-2 ring-blue-200 bg-blue-50' : ''
+      className={`block bg-off-white border-2 border-black rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
+        project.featured ? 'border-4 border-black' : ''
       }`}
     >
       {project.featured && (
         <div className="flex items-center mb-2">
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">
+          <span className="bg-off-white border border-black text-black text-xs font-semibold px-2 py-1 rounded-full">
             Featured
           </span>
         </div>
@@ -34,7 +34,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+              className="px-3 py-1 bg-off-white border border-black text-black text-sm rounded-full"
             >
               {tech}
             </span>
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <div className="flex space-x-4 mb-3">
         {project.liveUrl && (
-          <span className="text-blue-600 font-medium text-sm">
+          <span className="text-black font-medium text-sm">
             View Live →
           </span>
         )}

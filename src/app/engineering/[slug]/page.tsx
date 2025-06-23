@@ -31,7 +31,7 @@ export default async function EngineeringProjectDetail({ params }: Props) {
             ← Back to Engineering Projects
           </Link>
           
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-off-white rounded-lg shadow-lg p-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">{project.title}</h1>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

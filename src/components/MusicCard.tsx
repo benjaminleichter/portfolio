@@ -9,13 +9,13 @@ const MusicCard = ({ project }: MusicCardProps) => {
   return (
     <Link 
       href={`/music/${project.id}`}
-      className={`block bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
-        project.featured ? 'ring-2 ring-purple-200 bg-gradient-to-br from-purple-100 to-pink-100' : ''
+      className={`block bg-off-white border-2 border-black rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
+        project.featured ? 'border-4 border-black' : ''
       }`}
     >
       {project.featured && (
         <div className="flex items-center mb-2">
-          <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">
+          <span className="bg-off-white border border-black text-black text-xs font-semibold px-2 py-1 rounded-full">
             Featured
           </span>
         </div>
@@ -28,7 +28,7 @@ const MusicCard = ({ project }: MusicCardProps) => {
       <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
         <span className="font-medium">{project.genre}</span>
         <span>{project.duration}</span>
-        <span className="bg-gray-100 px-2 py-1 rounded text-xs">
+        <span className="bg-off-white border border-black px-2 py-1 rounded text-xs">
           {project.projectType}
         </span>
       </div>
@@ -42,7 +42,7 @@ const MusicCard = ({ project }: MusicCardProps) => {
           {project.tools.map((tool) => (
             <span
               key={tool}
-              className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full"
+              className="px-3 py-1 bg-off-white border border-black text-black text-sm rounded-full"
             >
               {tool}
             </span>
@@ -52,17 +52,17 @@ const MusicCard = ({ project }: MusicCardProps) => {
 
       <div className="flex space-x-4 mb-3">
         {project.audioUrl && (
-          <span className="text-purple-600 font-medium text-sm">
+          <span className="text-black font-medium text-sm">
             Listen →
           </span>
         )}
         {project.spotifyUrl && (
-          <span className="text-green-600 font-medium text-sm">
+          <span className="text-gray-600 font-medium text-sm">
             Spotify →
           </span>
         )}
         {project.youtubeUrl && (
-          <span className="text-red-600 font-medium text-sm">
+          <span className="text-gray-600 font-medium text-sm">
             YouTube →
           </span>
         )}

@@ -14,7 +14,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+    <nav className="fixed top-0 w-full bg-off-white backdrop-blur-md z-50 border-b-2 border-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -42,7 +42,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-off-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -62,7 +62,7 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-off-white border-t-2 border-black">
             {navItems.map((item) => (
               <Link
                 key={item.href}
