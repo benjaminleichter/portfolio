@@ -5,22 +5,15 @@ interface ProjectCardProps {
   project: EngineeringProject;
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) => {
-  const links = [];
-  if (project.liveUrl) {
-    links.push({ label: 'View Live', primary: true });
-  }
-
-  return (
-    <BaseCard
-      href={`/engineering/${project.id}`}
-      featured={project.featured}
-      title={project.title}
-      description={project.description}
-      tags={project.technologies}
-      links={links}
-    />
-  );
-};
+const ProjectCard = ({ project }: ProjectCardProps) => (
+  <BaseCard
+    href={`/engineering/${project.id}`}
+    featured={project.featured}
+    title={project.title}
+    description={project.description}
+    tags={project.technologies}
+    links={[]}
+  />
+);
 
 export default ProjectCard;
