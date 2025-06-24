@@ -8,7 +8,7 @@ interface BaseCardProps {
   description: string;
   tags: string[];
   links: Array<{ label: string; primary?: boolean }>;
-  dateInfo: string;
+  dateInfo?: string;
   children?: ReactNode;
 }
 

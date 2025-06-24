@@ -10,13 +10,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   if (project.liveUrl) {
     links.push({ label: 'View Live', primary: true });
   }
-  if (project.githubUrl) {
-    links.push({ label: 'GitHub' });
-  }
-
-  const dateInfo = project.endDate 
-    ? `${project.startDate} - ${project.endDate}`
-    : project.startDate;
 
   return (
     <BaseCard
@@ -26,7 +19,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       description={project.description}
       tags={project.technologies}
       links={links}
-      dateInfo={dateInfo}
     />
   );
 };
