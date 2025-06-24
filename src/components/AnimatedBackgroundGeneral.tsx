@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-const AnimatedBackground = () => {
+const AnimatedBackgroundGeneral = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
 
@@ -30,21 +30,32 @@ const AnimatedBackground = () => {
       fadeSpeed: number;
     }> = [];
 
-    const isInTextArea = (x: number, y: number) => {
-      // Define text exclusion zone (approximate center area where text appears)
+    const isInContentArea = (x: number, y: number) => {
+      // More conservative approach - avoid the main content area
+      const contentPadding = 100; // Extra padding around content
+      const navHeight = 64; // Navigation height
+      
+      // Define exclusion zones for typical content areas
       const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
+      const contentWidth = Math.min(canvas.width * 0.9, 1280); // Max content width
       
-      // Create a generous exclusion zone around the center text
-      const textWidth = Math.min(canvas.width * 0.8, 800); // Max width of text area
-      const textHeight = 200; // Approximate height of name + title
+      // Main content area (where most text and elements appear)
+      const leftBound = centerX - contentWidth / 2 - contentPadding;
+      const rightBound = centerX + contentWidth / 2 + contentPadding;
+      const topBound = navHeight + contentPadding;
+      const bottomBound = canvas.height - contentPadding;
       
-      const leftBound = centerX - textWidth / 2;
-      const rightBound = centerX + textWidth / 2;
-      const topBound = centerY - textHeight / 2;
-      const bottomBound = centerY + textHeight / 2;
+      // Check if point is in main content area
+      if (x >= leftBound && x <= rightBound && y >= topBound && y <= bottomBound) {
+        return true;
+      }
       
-      return x >= leftBound && x <= rightBound && y >= topBound && y <= bottomBound;
+      // Additional exclusion for top navigation area
+      if (y <= navHeight + 50) {
+        return true;
+      }
+      
+      return false;
     };
 
     const generateShapes = () => {
@@ -63,15 +74,15 @@ const AnimatedBackground = () => {
             const x = col * gridSize + Math.random() * (gridSize - shapeSize) + shapeSize / 2;
             const y = row * gridSize + Math.random() * (gridSize - shapeSize) + shapeSize / 2;
             
-            // Only add shape if it's not in the text area
-            if (!isInTextArea(x, y)) {
+            // Only add shape if it's not in the content area
+            if (!isInContentArea(x, y)) {
               shapes.push({
                 type: randomType,
                 x,
                 y,
                 opacity: 0,
                 phase: Math.random() * Math.PI * 2,
-                fadeSpeed: 0.008 + Math.random() * 0.012
+                fadeSpeed: 0.005 + Math.random() * 0.012
               });
             }
           }
@@ -158,4 +169,4 @@ const AnimatedBackground = () => {
   );
 };
 
-export default AnimatedBackground;
+export default AnimatedBackgroundGeneral;
