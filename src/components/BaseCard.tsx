@@ -10,6 +10,7 @@ interface BaseCardProps {
   links: Array<{ label: string; primary?: boolean }>;
   dateInfo?: string;
   children?: ReactNode;
+  external?: boolean;
 }
 
 const BaseCard = ({ 
@@ -20,11 +21,13 @@ const BaseCard = ({
   tags, 
   links, 
   dateInfo, 
-  children 
+  children,
+  external
 }: BaseCardProps) => {
   return (
     <Link 
       href={href}
+      target={external ? "_blank" : undefined}
       className={`block bg-off-white border-2 border-black rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer ${
         featured ? 'border-4 border-black' : ''
       }`}

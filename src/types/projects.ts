@@ -3,7 +3,7 @@ export interface EngineeringProject {
   title: string;
   description: string;
   technologies: string[];
-  liveUrl?: string;
+  liveUrl: string;
   featured: boolean;
 }
 

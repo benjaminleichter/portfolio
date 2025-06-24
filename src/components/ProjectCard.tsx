@@ -7,7 +7,8 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => (
   <BaseCard
-    href={`/engineering/${project.id}`}
+    href={project.liveUrl}
+    external={true}
     featured={project.featured}
     title={project.title}
     description={project.description}
