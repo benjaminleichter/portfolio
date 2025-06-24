@@ -18,26 +18,12 @@ export default async function EngineeringProjectDetail({ params }: Props) {
     notFound();
   }
 
-  const details = [
-    {
-      label: 'Duration',
-      value: project.endDate ? `${project.startDate} - ${project.endDate}` : project.startDate
-    }
-  ];
-
   const links = [];
   if (project.liveUrl) {
     links.push({
       url: project.liveUrl,
-      label: 'View Live Demo',
+      label: 'View',
       colorClass: 'bg-blue-600 hover:bg-blue-700'
-    });
-  }
-  if (project.githubUrl) {
-    links.push({
-      url: project.githubUrl,
-      label: 'View on GitHub',
-      colorClass: 'bg-gray-800 hover:bg-gray-900'
     });
   }
 
@@ -51,10 +37,10 @@ export default async function EngineeringProjectDetail({ params }: Props) {
       tags={project.technologies}
       tagColorClass="bg-blue-100 text-blue-800"
       backgroundClass="bg-off-white"
-      details={details}
       featured={project.featured}
       featuredLabel="Featured Project"
       links={links}
+      details={[]}
     />
   );
 }
