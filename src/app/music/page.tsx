@@ -1,13 +1,11 @@
 import Navigation from '@/components/Navigation';
 import MusicSection from '@/components/MusicSection';
-import AnimatedBackgroundGeneral from '@/components/AnimatedBackgroundGeneral';
 
 export default function Music() {
   const isProduction = process.env.NODE_ENV === 'production';
 
   return (
     <div className="min-h-screen relative">
-      <AnimatedBackgroundGeneral />
       <div className="relative z-10">
         <Navigation />
         <div className="pt-16">
