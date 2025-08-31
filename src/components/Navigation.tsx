@@ -14,18 +14,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-off-white backdrop-blur-md z-50 border-b-2 border-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 w-full bg-off-white backdrop-blur-md z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex md:justify-center sm:justify-start">
         <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-gray-900">
-              Ben Leichter
-            </Link>
-          </div>
-          
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -42,7 +36,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-off-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-off-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black cursor-pointer"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -62,7 +56,7 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-off-white border-t-2 border-black">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-off-white">
             {navItems.map((item) => (
               <Link
                 key={item.href}
