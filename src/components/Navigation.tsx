@@ -1,10 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const navItems = [
     { href: '/', label: 'Home' },
@@ -62,7 +69,6 @@ const Navigation = () => {
                 key={item.href}
                 href={item.href}
                 className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
