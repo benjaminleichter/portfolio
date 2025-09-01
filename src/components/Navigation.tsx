@@ -55,8 +55,8 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-off-white">
+        <div className="md:hidden flex absolute h-screen w-screen bg-off-white justify-center items-center">
+          <div className="space-y-1 sm:px-3 pb-36">
             {navItems.map((item) => (
               <Link
                 key={item.href}
